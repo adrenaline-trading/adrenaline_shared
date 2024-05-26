@@ -1,4 +1,4 @@
-defmodule AdrenalineShared.Bar do
+defmodule AdrenalineShared.History.Bar do
   @moduledoc """
   Size/access optimized OHLC bar definition.
   """
