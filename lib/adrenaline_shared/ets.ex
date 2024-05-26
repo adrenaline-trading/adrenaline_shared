@@ -42,7 +42,7 @@ defmodule AdrenalineShared.ETS do
     end
   end
 
-  @spec find_one( table(), key()) :: object()
+  @spec find_one( table(), key()) :: object() | nil
   def find_one( table, key) do
     case :ets.lookup( table, key) do
       [ object] ->

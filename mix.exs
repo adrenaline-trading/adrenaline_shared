@@ -7,7 +7,11 @@ defmodule AdrenalineShared.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      dialyzer: [
+        flags: [ :no_improper_lists],
+        list_unused_filters: true
+      ]
     ]
   end
 
@@ -21,6 +25,7 @@ defmodule AdrenalineShared.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      { :dialyxir, "~> 1.2", only: [ :dev, :test], runtime: false},
       { :extructure, "~> 1.0.0"},
       { :timex, "~> 3.0"}
     ]
